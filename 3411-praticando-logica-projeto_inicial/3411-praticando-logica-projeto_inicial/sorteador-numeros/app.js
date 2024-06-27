@@ -3,22 +3,26 @@ function sortear() {
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
 
-    let sorteados = [];
-    let numero;
+    if(de < ate) {
+        let sorteados = [];
+        let numero;
 
-    for(let i = 0; i < quantidade; i++) {
-        numero = obterNumeroAleatorio(de, ate);
-
-        while(sorteados.includes(numero)) {
+        for(let i = 0; i < quantidade; i++) {
             numero = obterNumeroAleatorio(de, ate);
+
+            while(sorteados.includes(numero)) {
+                numero = obterNumeroAleatorio(de, ate);
+            }
+
+            sorteados.push(numero);
         }
 
-        sorteados.push(numero);
+        let resultado = document.getElementById('resultado');
+        resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`;
+        alterarStatusBotao();
+    } else {
+        alert('Valor do campo "Do número" é maior ou igual ao valor do campo "Até o número", verifique se inseriu os dados corretamente.');
     }
-
-    let resultado = document.getElementById('resultado');
-    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados: ${sorteados}</label>`;
-    alterarStatusBotao();
 }
 
 function obterNumeroAleatorio(min, max) {
