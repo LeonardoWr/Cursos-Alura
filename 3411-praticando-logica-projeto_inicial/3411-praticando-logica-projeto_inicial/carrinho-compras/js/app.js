@@ -1,4 +1,6 @@
-let valorTotal = 1400;
+let valorTotal = 0;
+document.getElementById('lista-produtos').innerHTML = '';
+document.getElementById('valor-total').textContent = 'R$0';
 
 function adicionar() {
     let produtoEscolhido = document.getElementById('produto').value;
@@ -12,6 +14,7 @@ function adicionar() {
     
     valorTotal += valorCalculadoProduto;
     atualizarElementoValorTotal();
+    document.getElementById('quantidade').value = '';
 }
 
 function limpar() {
