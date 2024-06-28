@@ -4,6 +4,11 @@ function adicionar() {
     let elementoNomeAmigo = document.getElementById('nome-amigo');
     let nomeAmigo = elementoNomeAmigo.value;
 
+    if(nomeAmigo == '') {
+        alert('Informe o nome do amigo!');
+        return;
+    }
+
     elementoNomeAmigo.value = '';
     amigosAdicionados.push(nomeAmigo);
     alterarAmigosAdicionados();
