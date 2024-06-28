@@ -20,6 +20,12 @@ function alterarAmigosAdicionados() {
 }
 
 function sortear() {
+
+    if(amigosAdicionados.length < 4) {
+        alert('Adicione pelo menos 4 amigos!');
+        return;
+    }
+
     let amigosPresentear = sortearAmigosPresenteados();
 
     let amigosReceber = [];
