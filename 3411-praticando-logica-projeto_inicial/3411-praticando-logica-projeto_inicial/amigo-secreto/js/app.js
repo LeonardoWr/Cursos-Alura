@@ -9,6 +9,11 @@ function adicionar() {
         return;
     }
 
+    if(amigosAdicionados.includes(nomeAmigo)) {
+        alert('Nome já adicionado!');
+        return;
+    }
+
     elementoNomeAmigo.value = '';
     amigosAdicionados.push(nomeAmigo);
     alterarAmigosAdicionados();
